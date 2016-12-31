@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<meta charset=UTF-8>
+<style>
+html {
+  line-height: 2;
+}
+
+[aria-hidden] {
+  max-height: 0;
+  transition: max-height .3s linear, opacity .5s linear;
+  opacity: 0;
+  overflow: hidden;
+}
+
+[aria-hidden="false"] {
+  max-height: 20rem;
+  height: auto;
+  opacity: 1;
+}
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+form > fieldset legend {
+  display: none;
+}
+
+section h2 {
+  display: none;
+}
+</style>
+<title>native import</title>
+<h1>native <code>import</code></h1>
+<main>
+  <form action=./ method=GET>
+    <fieldset>
+      <legend>GitHub</legend>
+      <fieldset>
+        <legend>
+          <label for=text-field-of-github-user-name>GitHub user name</label>
+        </legend>
+        <span>https://github.com/</span>
+        <input id=text-field-of-github-user-name placeholder=ykzts>
+      </fieldset>
+      <button type=submit>submit</button>
+    </fieldset>
+  </form>
+  <section aria-hidden=true id=github-user>
+    <h2>GitHub User</h2>
+    <dl>
+      <dt>Name
+      <dd><output id=github-user-name></output>
+      <dt>Email</dt>
+      <dd><output id=github-user-email></output>
+      <dt>Location
+      <dd><output id=github-user-location></output>
+    </dl>
+  </section>
+</main>
+<script src=./lib/main.js type=module></script>
